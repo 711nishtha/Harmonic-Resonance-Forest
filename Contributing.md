@@ -1,83 +1,93 @@
 # Contributing to Harmonic Resonance Fields (HRF)
 
-First of all, thank you for your interest in contributing to **Harmonic Resonance Fields (HRF)**. This project is a research-driven, physics-informed machine learning framework focused on resonance-based classification, spectral learning, and robust time-series analysis.
+Thank you for your interest in contributing to **Harmonic Resonance Fields (HRF)**. This project is a research-driven, physics-informed machine learning framework focused on resonance-based classification, spectral learning, and robust time-series analysis.
 
-We welcome contributions from students, researchers, developers, and open-source contributors participating in **GSSoC 2026**.
+This repository is structured as a **research + engineering hybrid project**, and contributions are welcome through **GSSoC 2026**.
 
 ---
 
 # Table of Contents
 
-1. Project Philosophy
+1. Project Structure
 2. Ways to Contribute
 3. Getting Started
 4. Development Setup
-5. Project Structure
-6. Contribution Workflow
-7. Coding Guidelines
-8. Documentation Guidelines
-9. Research Contributions
-10. Issue Guidelines
-11. Pull Request Guidelines
-12. Good First Issues
-13. Code of Conduct
-14. Contact
+5. Contribution Workflow
+6. Coding Guidelines
+7. Documentation Guidelines
+8. Research Contributions
+9. Issue Guidelines
+10. Pull Request Guidelines
+11. Good First Issues (GSSoC)
+12. Code of Conduct
 
 ---
 
-# Project Philosophy
+# Project Structure
 
-HRF is not just another machine learning model. The goal of this project is to build a **physics-inspired machine learning framework** where classification is modeled as resonance, interference, and energy fields rather than decision boundaries.
+```
+.
+├── .github/workflows/        # CI/CD and automation workflows
+├── 1/                        # Early HRF prototypes, notebooks, and benchmarks
+├── docs/                     # Technical monograph and documentation
+├── HRF Codes/                # Conference, EEG, and final HRF implementations
+├── HRF-Engine/               # Core HRF engine (21D, 26D, generalized HRF)
+├── Research Paper/           # Research paper, white paper, and publication files
+├── README.md                 # Main project overview
+├── Contributing.md           # Contribution guidelines
+├── LICENSE
+├── SECURITY.md
+└── .gitignore
+```
 
-The project combines:
+### Important Directories
 
-* Wave Physics
-* Signal Processing
-* Machine Learning
-* Neuroscience
-* Statistical Validation
-* GPU Computing
-
-This repository is structured like a **research lab**, and contributors are encouraged to think like researchers, not just programmers.
+| Folder            | Description                                                      |
+| ----------------- | ---------------------------------------------------------------- |
+| `HRF-Engine/`     | Core HRF algorithm implementations                               |
+| `HRF Codes/`      | Application-specific HRF implementations (EEG, Conference, etc.) |
+| `docs/`           | Technical documentation and monograph                            |
+| `Research Paper/` | Paper, whitepaper, and publication material                      |
+| `1/`              | Experimental notebooks, early versions, benchmarks               |
 
 ---
 
 # Ways to Contribute
 
-You can contribute in many ways:
+## Code Contributions
 
-## 1. Code Contributions
-
-* Improve HRF algorithm performance
+* Improve HRF engine
 * Optimize GPU implementation
+* Implement multi-class HRF
+* Implement regression HRF
+* Improve Harmonic Forest
 * Add new resonance kernels
-* Improve Harmonic Forest ensemble
-* Add new datasets and benchmarks
-* Implement HRF for regression
-* Implement HRF for multi-class classification
+* Improve evolutionary optimization
 
-## 2. Documentation Contributions
+## Documentation Contributions
 
 * Improve README
-* Write Wiki pages
-* Add tutorials
-* Add mathematical explanations
-* Add diagrams and visualizations
+* Improve Wiki
+* Write tutorials
+* Add diagrams
+* Add mathematical derivations
 
-## 3. Research Contributions
+## Research Contributions
 
-* Mathematical analysis of HRF kernel
-* Compare HRF with SVM, Random Forest, XGBoost
-* Test HRF on new datasets
-* Write research-style documentation
-* Performance benchmarking
+* Mathematical analysis of HRF
+* Kernel analysis
+* HRF vs SVM comparison
+* HRF vs Random Forest comparison
+* HRF vs XGBoost comparison
+* Spectral analysis of HRF
+* Phase invariance proof
 
-## 4. Testing Contributions
+## Testing Contributions
 
 * Add unit tests
 * Add benchmark tests
-* Test HRF on different datasets
-* Test GPU vs CPU performance
+* Test on new datasets
+* GPU vs CPU benchmarks
 
 ---
 
@@ -85,16 +95,14 @@ You can contribute in many ways:
 
 ## Step 1 — Fork the Repository
 
-Click the **Fork** button on GitHub to create your own copy of the repository.
-
-## Step 2 — Clone the Repository
+## Step 2 — Clone
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/Harmonic-Resonance-Forest.git
 cd Harmonic-Resonance-Forest
 ```
 
-## Step 3 — Create a New Branch
+## Step 3 — Create Branch
 
 ```bash
 git checkout -b feature/your-feature-name
@@ -110,12 +118,12 @@ git checkout -b feature/your-feature-name
 * NumPy
 * SciPy
 * scikit-learn
-* CuPy (for GPU)
-* RAPIDS cuML (optional, GPU acceleration)
-* Matplotlib
+* CuPy (GPU)
+* RAPIDS cuML (optional)
 * Pandas
+* Matplotlib
 
-## Install Dependencies
+## Install
 
 ```bash
 pip install -r requirements.txt
@@ -123,68 +131,31 @@ pip install -r requirements.txt
 
 ---
 
-# Project Structure
-
-```
-HRF/
-│
-├── hrf/
-│   ├── core/            # HRF kernel implementation
-│   ├── ensemble/        # Harmonic Forest
-│   ├── preprocessing/   # FFT, Bipolar Montage, Scaling
-│   ├── optimization/    # Evolutionary search
-│   ├── gpu/             # GPU acceleration (CuPy / RAPIDS)
-│   └── utils/
-│
-├── datasets/
-├── benchmarks/
-├── notebooks/
-├── docs/
-├── tests/
-├── examples/
-└── README.md
-```
-
----
-
 # Contribution Workflow
 
-1. Fork the repository
-2. Clone your fork
-3. Create a new branch
+1. Fork repository
+2. Clone fork
+3. Create new branch
 4. Make changes
-5. Commit changes
-6. Push to your fork
-7. Open a Pull Request
+5. Commit
+6. Push
+7. Open Pull Request
 
 ---
 
 # Coding Guidelines
 
-## Python Style
-
 * Follow **PEP 8**
 * Use meaningful variable names
-* Add docstrings to all functions
+* Add docstrings
 * Write modular code
-* Avoid hardcoding values
+* Avoid hardcoding
 
-## Example Function Style
+### Example
 
 ```python
 def resonance_kernel(distance, gamma, omega, phase):
-    """
-    Computes harmonic resonance response.
-
-    Parameters:
-    distance : float
-    gamma : float (damping factor)
-    omega : float (frequency)
-    phase : float (phase offset)
-
-    Returns:
-    float : resonance value
-    """
+    """Compute harmonic resonance response"""
     return np.exp(-gamma * distance**2) * np.cos(omega * distance + phase)
 ```
 
@@ -192,7 +163,7 @@ def resonance_kernel(distance, gamma, omega, phase):
 
 # Documentation Guidelines
 
-Good documentation should include:
+Documentation should include:
 
 * Explanation
 * Mathematical intuition
@@ -200,10 +171,11 @@ Good documentation should include:
 * Diagrams
 * Example usage
 
-If you contribute documentation, place it in:
+Documentation locations:
 
 ```
 docs/
+README.md
 wiki/
 notebooks/
 ```
@@ -212,19 +184,19 @@ notebooks/
 
 # Research Contributions
 
-We especially welcome **research-oriented contributions** such as:
+Research-style contributions are highly encouraged. Suggested topics:
 
-* Mathematical proof of resonance kernel properties
-* HRF decision boundary analysis
+* Mathematical theory of HRF
+* Resonance kernel analysis
+* Decision boundary analysis
 * Spectral domain interpretation
-* Comparison with RBF kernel
-* Comparison with KNN distance metrics
-* Performance vs noise analysis
-* Phase invariance mathematical proof
+* Phase invariance proof
+* Noise robustness experiments
+* Time-series benchmarking
 
-If you are contributing research content, include:
+Research contributions should include:
 
-* Problem statement
+* Problem
 * Method
 * Experiment
 * Results
@@ -234,97 +206,82 @@ If you are contributing research content, include:
 
 # Issue Guidelines
 
-Before creating an issue:
+When opening an issue:
 
-* Check if the issue already exists
-* Use a clear title
-* Describe the problem clearly
-* Include screenshots or logs if possible
+* Use clear title
+* Describe problem
+* Include logs/screenshots
+* Suggest solution if possible
 
-## Good Issue Title Examples
+### Example Issue Titles
 
-* "Bug: HRF GPU version crashes on large dataset"
-* "Feature Request: Add multi-class HRF support"
-* "Documentation: Add HRF mathematical derivation"
+* "Bug: HRF GPU memory overflow"
+* "Feature: Add multi-class HRF"
+* "Docs: Add HRF mathematical derivation"
 
 ---
 
 # Pull Request Guidelines
 
-Before submitting a Pull Request:
+Before submitting PR:
 
-Make sure:
+* Code runs
+* No errors
+* Documentation updated
+* Clear commit message
 
-* Code runs without errors
-* Code is formatted properly
-* Documentation is updated
-* Commit messages are clear
-
-## Pull Request Title Format
+### PR Title Format
 
 ```
-[Feature] Added multi-class HRF support
-[Fix] Fixed GPU memory leak
-[Docs] Added mathematical explanation
-[Benchmark] Added new dataset benchmark
+[Feature] Added multi-class HRF
+[Fix] Fixed GPU bug
+[Docs] Added math explanation
+[Benchmark] Added dataset test
 ```
 
 ---
 
-# Good First Issues (For GSSoC Contributors)
+# Good First Issues (GSSoC)
 
-Beginner-friendly tasks:
+### Beginner
 
-* Add comments to HRF core code
-* Improve README formatting
+* Improve documentation
+* Add comments to code
 * Add example notebooks
 * Add visualization plots
-* Add unit tests
-* Convert scripts into Python modules
-* Write documentation for functions
-* Add dataset loader scripts
+* Write function documentation
 
-Intermediate tasks:
+### Intermediate
 
-* Implement HRF for multi-class classification
-* Add regression version of HRF
-* Optimize FFT pipeline
-* Add hyperparameter search visualization
+* Multi-class HRF
+* Regression HRF
+* FFT optimization
+* Add dataset loaders
 
-Advanced tasks:
+### Advanced
 
-* GPU optimization using CuPy
-* Implement new resonance kernels
-* Mathematical analysis of HRF
-* Compare HRF vs deep learning models
+* GPU optimization
+* New resonance kernels
+* Mathematical proof work
+* HRF vs Deep Learning comparison
 
 ---
 
 # Code of Conduct
 
-Please be respectful and collaborative.
+Be respectful and collaborative.
 
-We aim to build a **research-oriented open-source community** where students and researchers can learn, experiment, and contribute to physics-informed machine learning.
-
----
-
-# Contact
-
-For major contributions, research collaborations, or discussions:
-
-* Open an Issue
-* Start a Discussion
-* Submit a Pull Request
+This project is research-oriented and aims to build a community around **physics-informed machine learning**.
 
 ---
 
 # Final Note
 
-HRF is a research-oriented project. Contributors are encouraged not only to write code, but also to:
+HRF is a research project. Contributors are encouraged to think about:
 
-* Think about the physics
-* Think about the mathematics
-* Think about the signal processing
-* Think about why the algorithm works
+* Physics
+* Mathematics
+* Signal Processing
+* Machine Learning Theory
 
 **Build not just code — build understanding.**
