@@ -545,6 +545,10 @@ This work was developed independently as part of my Electronics and Communicatio
 
 ---
 
+## License
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+
+
 **"When AI listens to the physics of the world, it unlocks unprecedented understanding."**
 
 *Last Updated: December 2025*
