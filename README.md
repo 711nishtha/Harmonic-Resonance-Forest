@@ -8,11 +8,12 @@
 [![Email](https://img.shields.io/badge/Email-devanik2005@gmail.com-red?style=flat&logo=gmail)](mailto:devanik2005@gmail.com)
 
 ---
+
 ⚠️ Project Status: This repository contains published research (DOI: 10.5281/zenodo.18173940). All contributions must pass rigorous testing to ensure the 98.84% accuracy benchmark is maintained. Please read CONTRIBUTING.md before opening an issue.
 
 ---
 
-##  Research Breakthrough
+##  Research Advancement
 
 I developed **Harmonic Resonance Fields (HRF)**, a novel physics-informed machine learning algorithm that achieved **98.84% accuracy** on the EEG Eye State Corpus (OpenML ID: 1471), surpassing all industry-standard models including Random Forest, XGBoost, and Extra Trees.
 
@@ -35,7 +36,7 @@ HRF combines **five fields**:
 4. **Neuroscience** - Brainwave frequencies (Alpha/Beta/Delta/Theta/Gamma), EEG physiology
 5. **Statistical Mathematics** - Fourier analysis, cross-validation, optimization theory
 
-The breakthrough is the **synthesis**: treating classification as a physical wave interference problem solved with GPU-accelerated statistical validation on neurophysiological signals.
+The advancement is the **synthesis**: treating classification as a physical wave interference problem solved with GPU-accelerated statistical validation on neurophysiological signals.
 
 ---
 
@@ -535,6 +536,10 @@ This work was developed independently as part of my Electronics and Communicatio
 <img width="867" height="553" alt="download" src="https://github.com/user-attachments/assets/c09bea3a-ac31-4071-b410-31ff0acd8275" />
 
 ---
+
+## License
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+
 
 **"When AI listens to the physics of the world, it unlocks unprecedented understanding."**
 
