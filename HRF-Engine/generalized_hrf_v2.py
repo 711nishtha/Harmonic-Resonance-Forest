@@ -56,6 +56,21 @@ class HolographicSoulUnit(BaseEstimator, ClassifierMixin):
         self.X_raw_source_ = None
 
     def fit(self, X, y):
+        """
+        Fit the resonance unit to training data.
+
+        Parameters
+        ----------
+        X : array-like of shape (n_samples, n_features)
+            Feature matrix.
+        y : array-like of shape (n_samples,)
+            Class labels.
+
+        Returns
+        -------
+        self : object
+            Fitted estimator.
+        """
         self.classes_ = np.unique(y)
         self._apply_projection(X)
         self.y_train_ = y
